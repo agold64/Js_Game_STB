@@ -1,0 +1,120 @@
+/********** Structure **********/
+#centerContainer {
+    overflow: hidden;
+    width: 960px;
+    margin: 0 auto;
+}
+/********** Modal Window **********/
+#modal {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#modalMask {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    -moz-opacity: 0.7;
+}
+    #modalContent {
+        position: relative;
+        width: 300px;
+        top: 40%;
+        margin: 0 auto;
+        padding: 5px 15px 15px 15px;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 3px 1px #888888;
+        z-index: 9999;
+        font-family: Verdana;
+    }
+        #modalContent h1 {
+            font-size: 20px;
+            margin-bottom: 15px;    
+        }
+        #modalContent p {
+            font-size: 11px;
+            margin-bottom: 20px;
+        }
+        div.buttonClose {
+            overflow: hidden;
+        }
+            .closeModal {
+                float: right;
+                border: none;
+                background: #ffffff;
+                font-weight: bold;
+                color: #A0A0A0;
+            }
+
+/********** Table/Grid **********/
+        table {
+            width: 100%;
+            font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
+            margin-bottom: 15px;
+        }
+
+        caption {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        td, th {
+            font-size: 13px;
+            border: 1px solid #73afb7;
+            padding: 3px 5px 2px 5px;
+        }
+
+        th {
+            background-color: #3fcaed;
+            color: #ffffff;
+            text-align: left;
+            border-color: #14556b;
+        }
+        tfoot {
+            background: #C0C0C0;
+            border-color: #14556b;
+            font-weight: bold;
+        }
+        .tableHover {
+            background-color: #a9f7c4;
+        }
+        
+/********** Buttons **********/
+button {
+    padding: 3px 7px;
+    background: #3fcaed;
+    color: #ffffff;
+    border: 1px solid #14556b;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+    button:hover {
+        background: #ffffff;
+        color: #3fcaed;
+        cursor: pointer;
+    }
+    button#okButton,
+    button#closeModal {
+        background: #ffffff;
+        color: #3fcaed;        
+    }
+        button#okButton:hover,
+        #closeModal:hover {
+            background: #3fcaed;
+            color: #ffffff;            
+        }

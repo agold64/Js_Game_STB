@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>Shut The Box</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">   
+    <link rel="stylesheet" type="text/css" media="screen" href="css/modal.css" />
+</head>
+
+<body>
+     <div id="wrapper">
+         <div class="mainContainer">
+             <div class="numbersContainer">
+                 <ul class="numbers">
+                     <li class="flip"> 
+                         <div id="1" class="card"> 
+                             <input type="button" class="front" name="1" value="1" />
+                             <button type="button" class="back"></button> 
+                         </div> 
+                     </li> <!-- End flip -->  
+                     <li class="flip"> 
+                         <div id="2" class="card"> 
+                             <input type="button" class="front" name="2" value="2" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip --> 
+                     <li class="flip"> 
+                         <div id="3" class="card"> 
+                             <input type="button" class="front" name="3" value="3" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip -->  
+                     <li class="flip"> 
+                         <div id="4" class="card"> 
+                             <input type="button" class="front" name="4" value="4" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip --> 
+                     <li class="flip"> 
+                         <div id="5" class="card"> 
+                             <input type="button" class="front" name="5" value="5" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip -->  
+                     <li class="flip"> 
+                         <div id="6" class="card"> 
+                             <input type="button" class="front" name="6" value="6" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip --> 
+                     <li class="flip"> 
+                         <div id="7" class="card"> 
+                             <input type="button" class="front" name="7" value="7" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip -->  
+                     <li class="flip"> 
+                         <div id="8" class="card"> 
+                             <input type="button" class="front" name="8" value="8" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip --> 
+                     <li class="flip"> 
+                         <div id="9" class="card"> 
+                             <input type="button" class="front" name="9" value="9" />
+                             <button type="button" class="back"></button>  
+                         </div> 
+                     </li> <!-- End flip --> 
+                </ul> <!-- End numbers -->
+             </div> <!-- End numbersContainer -->
+
+             <div class="diceContainer">
+                 <div id="dice1" class="dice">1</div>
+                 <div id="dice2" class="dice">1</div>
+             </div> <!-- End diceContainer -->
+         </div> <!-- End mainContainer -->
+
+         <div class="controlContainer">
+             <div class="controlButton">
+                 <button id="endTurn">End Turn</button>
+                 <button id="endGame">End Game</button>
+             </div>
+             <div class="scoreBoard">
+                 <h2>Score Board</h2>
+                 <p id="score"></p>
+             </div>
+             <div class="diceButton">
+                 <button id="rollDice">Roll Dice</button>
+                 <h2 id="status" style="clear:left"></h2>
+             </div>
+             <div class="rules">
+                 <h2>Game Rules</h2>
+                 <p>After rolling, add up the dice and then flip one of any combination of open numbers that equals the total number on the dice.</p> 
+                 <p>For example, if the total number is 8, the player may choose any of the following sets of numbers (as long as all of the numbers in 
+                    the set are available to be covered):</p>
+                 <ul>
+                     <li>8</li>
+                     <li>7, 1</li>
+                     <li>6, 2</li>
+                     <li>5, 3</li>
+                     <li>5, 2, 1</li>
+                     <li>4, 3, 1</li>
+                 </ul>
+             </div>
+         </div> <!-- End controlContainer -->
+     </div><!-- End wrapper -->
+
+    <!-- Modal Window -->
+    <div id="modal">
+        <div id="modalMask"></div>
+        <div id="modalContent"><p id="modalText"><!-- Message --></p> <button type="button" id="closeModal">Close</button></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+</html>
