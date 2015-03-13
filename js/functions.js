@@ -4,8 +4,10 @@
     var dice = [];
     var tile = [];
 
+    // Score
     var startScore = '45';
     U.setText('score', startScore);
+    
 
     // Flip Tile
     var button = document.getElementsByTagName('input');
@@ -23,6 +25,7 @@
                 if (avg <= dice) {
                     U.addClass(this.value, 'flipped');
                     startScore -= this.value;
+                    document.getElementById('score').textContent = startScore;
 
                     if (avg == dice) {
                         document.getElementById('rollDice').disabled = false;
@@ -32,14 +35,15 @@
                     tile.pop();
                     avg -= this.value;
                 }
+
+                console.log('Tile ' + tile);
+                console.log('Avg ' + avg);
+                console.log('Score ' + startScore);
             }
 
         }
 
     }
-
-
-    // Score
 
 
     // Roll Dice
@@ -76,6 +80,15 @@
         return a + b;
     }
 
+    // End Turn
+    function endTurn() {
+        document.getElementById('rollDice').disabled = true;
+        for (i = 1; i < 10; i++) {
+            U.removeClass([i], 'flipped');
+        }
+        alert("Your final score is " + startScore);
+    }
+
     // End Game
     function endGame() {
         location.reload();
@@ -85,6 +98,7 @@
     window.onload = function () {
         U.addEvent(document.getElementById('rollDice'), 'click', rollDice);
         U.addEvent(document.getElementById('endGame'), 'click', endGame);
+        U.addEvent(document.getElementById('endTurn'), 'click', endTurn);
         U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
     }
 
