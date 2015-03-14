@@ -20,7 +20,6 @@ var U = {
             } else {
                 output.innerText = message;
             }
-
             return true;
         }
     },
@@ -45,7 +44,7 @@ var U = {
 
     addClass: function (id, cl) {
         'use strict';
-        return document.getElementById(id).classList.add(cl);
+        return this.$(id).classList.add(cl);
     },
 
     removeClass: function (id, cl) {
@@ -55,8 +54,8 @@ var U = {
 
     openModal: function(message) {
         'use strict';
-        document.getElementById('modalText').textContent = message;
-        document.getElementById('modal').style.display = 'inline-block';  
+        this.$('modalText').textContent = message;
+        this.$('modal').style.display = 'inline-block';  
     }, 
 
     closeModal: function() {

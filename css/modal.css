@@ -1,9 +1,3 @@
-/********** Structure **********/
-#centerContainer {
-    overflow: hidden;
-    width: 960px;
-    margin: 0 auto;
-}
 /********** Modal Window **********/
 #modal {
     display: none;
@@ -60,40 +54,8 @@
                 color: #A0A0A0;
             }
 
-/********** Table/Grid **********/
-        table {
-            width: 100%;
-            font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
-            margin-bottom: 15px;
-        }
-
-        caption {
-            text-align: right;
-            font-size: 12px;
-        }
-
-        td, th {
-            font-size: 13px;
-            border: 1px solid #73afb7;
-            padding: 3px 5px 2px 5px;
-        }
-
-        th {
-            background-color: #3fcaed;
-            color: #ffffff;
-            text-align: left;
-            border-color: #14556b;
-        }
-        tfoot {
-            background: #C0C0C0;
-            border-color: #14556b;
-            font-weight: bold;
-        }
-        .tableHover {
-            background-color: #a9f7c4;
-        }
         
-/********** Buttons **********/
+/********** Button **********/
 button {
     padding: 3px 7px;
     background: #3fcaed;

@@ -40,9 +40,7 @@
                 console.log('Avg ' + avg);
                 console.log('Score ' + startScore);
             }
-
         }
-
     }
 
 
@@ -64,15 +62,16 @@
         dice2.innerHTML = d2;
 
         document.getElementById('rollDice').disabled = true;
-
         console.log('Rolled ' + dice);
     }
+
 
     // Clear Array
     function clearArray(arr) {
         while (arr.length) {
             arr.pop();
         }
+        //arr.length = 0;
     }
 
     // Add Array
