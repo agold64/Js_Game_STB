@@ -19,48 +19,37 @@
             tile.push(parseInt(this.value));
             var avg = tile.reduce(addArray, 0);
 
-            //if (dice === undefined || dice.length === 0) {
-            //    U.openModal("Roll Dice First");
-            //} else {
-            //    if (avg <= dice) {
-            //        U.addClass(this.value, 'flipped');
-            //        if (avg == dice) {
-            //            document.getElementById('rollDice').disabled = false;
-            //            startScore -= avg;
-            //            document.getElementById('score').textContent = startScore;
-            //        }
-            //    } else {
-            //        U.openModal("Number is Higher then Dice");
-            //        tile.pop();
-            //        avg -= this.value;
-            //    }
-
-            //    console.log('Tile ' + tile);
-            //    console.log('Avg ' + avg);
-            //    console.log('Score ' + startScore);
-            //}
-
-            if (dice !== undefined && dice.length !== 0) {
-                //if (avg <= dice) {
-                //    U.addClass(this.value, 'flipped');
-                //    if (avg == dice) {
-                //        document.getElementById('rollDice').disabled = false;
-                //        startScore -= avg;
-                //        document.getElementById('score').textContent = startScore;
-                //    }
-                //} else {
-                //    U.openModal("Number is Higher then Dice");
-                //    tile.pop();
-                //    avg -= this.value;
-                //}
-                alert('roll dice');
-            } else {
+            if (dice === undefined || dice.length === 0) {
                 U.openModal("Roll Dice First");
+            } else {
+                if (avg <= dice) {
+                    U.addClass(this.value, 'flipped');
+                    if (avg == dice) {
+                        document.getElementById('rollDice').disabled = false;
+                        startScore -= avg;
+                        document.getElementById('score').textContent = startScore;
+                    }
+                } else {
+                    U.openModal("Number is Higher then Dice");
+                    tile.pop();
+                    avg -= this.value;
+                }
+
+                console.log('Tile ' + tile);
+                console.log('Avg ' + avg);
+                console.log('Score ' + startScore);
             }
-            console.log('Tile ' + tile);
-            console.log('Avg ' + avg);
-            console.log('Score ' + startScore);
         }
+    }
+
+    for (var i = 1; i < 10; i++) {
+        var unButton = document.getElementById([i]);
+        alert(unButton);
+        //unButton.onclick = function () {
+        //    if (unButton.classList.contains('flipped')) {
+        //        alert(this.id);
+        //    }
+        //}
     }
 
 
