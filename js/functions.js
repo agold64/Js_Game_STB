@@ -42,16 +42,6 @@
         }
     }
 
-    for (var i = 1; i < 10; i++) {
-        var unButton = document.getElementById([i]);
-        alert(unButton);
-        //unButton.onclick = function () {
-        //    if (unButton.classList.contains('flipped')) {
-        //        alert(this.id);
-        //    }
-        //}
-    }
-
 
     // Roll Dice
     function rollDice() {

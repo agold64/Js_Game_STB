@@ -33,10 +33,10 @@ a { text-decoration: none; }
 .mainContainer {
     background-color: #0a6c03;
     border: 20px solid #cb8c3a;
-    -webkit-border-image: url(../img/wood2.png) 10 10 repeat;
-    -moz-border-image: url(../img/wood2.png) 10 10 repeat;
-    -o-border-image: url(../img/wood2.png) 10 10 repeat;
-    border-image: url(../img/wood2.png) 10 10 repeat;
+    -webkit-border-image: url(../img/wood.png) 10 10 repeat;
+    -moz-border-image: url(../img/wood.png) 10 10 repeat;
+    -o-border-image: url(../img/wood.png) 10 10 repeat;
+    border-image: url(../img/wood.png) 10 10 repeat;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -52,7 +52,7 @@ a { text-decoration: none; }
 /******** Number Styles ********/
 .numbersContainer {
     border-bottom: 3px solid #cb8c3a;
-    border-image: url(../img/wood2.png) 30 30 repeat;
+    border-image: url(../img/wood.png) 30 30 repeat;
 }
 
 ul.numbers {
@@ -79,7 +79,7 @@ ul.numbers {
         .card input { 
             backface-visibility: hidden;
             background: #cb8c3a;
-            background-image: url(../img/wood2.png);
+            background-image: url(../img/wood.png);
             cursor: pointer; 
             font-size: 24px;
             height: 100%;
