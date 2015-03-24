@@ -33,7 +33,7 @@ var U = {
         }
     },
 
-    remove: function (obj, type, fn) {
+    removeEvent: function (obj, type, fn) {
         'use strict';
         if (obj && obj.removeEventListener) {
             obj.removeEventListener(type, fn, false);
@@ -44,23 +44,23 @@ var U = {
 
     addClass: function (id, cl) {
         'use strict';
-        return this.$(id).classList.add(cl);
+        this.$(id).classList.add(cl);
     },
 
     removeClass: function (id, cl) {
         'use strict';
-        return document.getElementById(id).classList.remove(cl);
+        document.getElementById(id).classList.remove(cl);
     },
 
     openModal: function(message) {
         'use strict';
         this.$('modalText').textContent = message;
-        this.$('modal').style.display = 'inline-block';  
-    }, 
+        this.$('modal').style.display = 'inline-block';
+    },
 
     closeModal: function() {
         'use strict';
         document.getElementById('modal').style.display = 'none';
-    } 
+    }
 
 };
