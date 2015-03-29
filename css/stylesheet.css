@@ -32,6 +32,7 @@ a { text-decoration: none; }
 
 .mainContainer {
     background-color: #0a6c03;
+    background: url(../img/table_felt.png) 0 0 repeat;
     border: 20px solid #cb8c3a;
     -webkit-border-image: url(../img/wood.png) 10 10 repeat;
     -moz-border-image: url(../img/wood.png) 10 10 repeat;

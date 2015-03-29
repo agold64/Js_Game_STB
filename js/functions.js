@@ -87,15 +87,15 @@
         alert("Your final score is " + startScore);
     }
 
-    // End Game
-    function endGame() {
+    // Reset Game
+    function resetGame() {
         location.reload();
     }
 
     // EventHandlers
     window.onload = function () {
         U.addEvent(document.getElementById('rollDice'), 'click', rollDice);
-        U.addEvent(document.getElementById('endGame'), 'click', endGame);
+        U.addEvent(document.getElementById('endGame'), 'click', resetGame);
         U.addEvent(document.getElementById('endTurn'), 'click', endTurn);
         U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
     }

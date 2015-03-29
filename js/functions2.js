@@ -8,43 +8,45 @@
     var startScore = '45';
     U.setText('score', startScore);
 
+    // Flip Tile
+    for (var i = 1; i < 10; i++) {
+        var element = document.getElementById([i]);
 
-    function fliptile(e) {
-        'use strict';
-        if (typeof e == 'undefined') e = window.event;
-        var target = e.target || e.srcElement;
-    }
-
-    //Flip Tile
-    var button = document.getElementsByTagName('input');
-    for (var i = 0, buttonCount = button.length; i < buttonCount; i++) {
-        var data = button[i];
-
-        data.onclick = function () {
-            tile.push(parseInt(this.value));
-            var avg = tile.reduce(addArray, 0);
-
-            if (dice !== undefined || dice.length !== 0) {
-                if (avg <= dice) {
-                    U.addClass(this.value, 'flipped');
-                    if (avg == dice) {
-                        document.getElementById('rollDice').disabled = false;
-                        startScore -= avg;
-                        document.getElementById('score').textContent = startScore;
-                    }
-                } else {
-                    U.openModal("Number is Higher then Dice");
-                    tile.pop();
-                    avg -= this.value;
-                }
-
-                console.log('Tile ' + tile);
-                console.log('Avg ' + avg);
-                console.log('Score ' + startScore);
+        element.onclick = function () {
+            if ((this.classList.contains('flipped')) && (!this.classList.contains('locked'))) {
+                U.removeClass(this.id, 'flipped');
+                tile.pop();
+                avg -= this.id;
             } else {
-                U.openModal("Roll Dice First");
+                tile.push(parseInt(this.id));
+                var avg = tile.reduce(addArray, 0);
+
+                if (dice.length !== 0) {
+                    if (avg <= dice) {
+                        U.addClass(this.id, 'flipped');
+                        if (avg == dice) {
+                            document.getElementById('rollDice').disabled = false;
+                            startScore -= avg;
+                            document.getElementById('score').textContent = startScore;
+                            for (var i in tile) {
+                                U.addClass(tile[i].toString(), 'Locked');
+                            }
+                        }
+                    } else {
+                        U.openModal("Number is Higher then Dice");
+                        tile.pop();
+                        avg -= this.id;
+                    }
+
+                    console.log('Tile ' + tile);
+                    console.log('Avg ' + avg);
+                    console.log('Score ' + startScore);
+                } else {
+                    U.openModal("Roll Dice First");
+                }
             }
         }
+
     }
 
 
@@ -92,15 +94,15 @@
         alert("Your final score is " + startScore);
     }
 
-    // End Game
-    function endGame() {
+    // Reset Game
+    function resetGame() {
         location.reload();
     }
 
     // EventHandlers
     window.onload = function () {
         U.addEvent(document.getElementById('rollDice'), 'click', rollDice);
-        U.addEvent(document.getElementById('endGame'), 'click', endGame);
+        U.addEvent(document.getElementById('endGame'), 'click', resetGame);
         U.addEvent(document.getElementById('endTurn'), 'click', endTurn);
         U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
     }
