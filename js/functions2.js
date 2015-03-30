@@ -13,7 +13,7 @@
         var element = document.getElementById([i]);
 
         element.onclick = function () {
-            if ((this.classList.contains('flipped')) && (!this.classList.contains('locked'))) {
+            if ( (this.classList.contains('flipped')) && (!this.classList.contains('Locked')) ) {
                 U.removeClass(this.id, 'flipped');
                 tile.pop();
                 avg -= this.id;
@@ -37,14 +37,13 @@
                         tile.pop();
                         avg -= this.id;
                     }
-
-                    console.log('Tile ' + tile);
-                    console.log('Avg ' + avg);
-                    console.log('Score ' + startScore);
                 } else {
                     U.openModal("Roll Dice First");
                 }
             }
+            console.log('Tile ' + tile);
+            console.log('Avg ' + avg);
+            console.log('Score ' + startScore);
         }
 
     }
