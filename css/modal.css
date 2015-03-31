@@ -8,7 +8,7 @@
     height: 100%;
 }
 
-#modalMask {
+.modalMask {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -20,7 +20,7 @@
     filter:alpha(opacity=70);
     -moz-opacity: 0.4;
 }
-    #modalContent {
+    .modalContent {
         position: relative;
         width: 300px;
         top: 40%;
@@ -35,11 +35,11 @@
         z-index: 9999;
         font-family: Verdana;
     }
-        #modalContent h1 {
+        .modalContent h1 {
             font-size: 20px;
             margin-bottom: 15px;    
         }
-        #modalContent p {
+        .modalContent p {
             font-size: 11px;
             margin-bottom: 20px;
         }

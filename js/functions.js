@@ -7,45 +7,49 @@
     // Score
     var startScore = '45';
     U.setText('score', startScore);
-    
 
     // Flip Tile
-    var button = document.getElementsByTagName('input');
-    for (var i = 0, buttonCount = button.length; i < buttonCount; i++) {
-        var data = button[i];
+    for (var i = 1; i < 10; i++) {
+        var element = document.getElementById([i]);
 
-        // Refactor: Possibly take below function and add to Eventlistener as opposed to create one that includes the whole flip tile
-        data.onclick = function () {
-            tile.push(parseInt(this.value));
-            var avg = tile.reduce(addArray, 0);
+        element.onclick = function () {
+            if (dice.length !== 0) {
+                if ((!this.classList.contains('flipped')) && (!this.classList.contains('Locked'))) {
+                    tile.push(parseInt(this.id));
+                    var avg = tile.reduce(addArray, 0);
 
-            if (dice === undefined || dice.length === 0) {
-                U.openModal("Roll Dice First");
-            } else {
-                if (avg <= dice) {
-                    U.addClass(this.value, 'flipped');
-                    if (avg == dice) {
-                        document.getElementById('rollDice').disabled = false;
-                        startScore -= avg;
-                        document.getElementById('score').textContent = startScore;
+                    if (avg <= dice) {
+                        U.addClass(this.id, 'flipped');
+                        if (avg == dice) {
+                            startScore -= avg;
+                            document.getElementById('score').textContent = startScore;
+                            document.getElementById('rollDice').disabled = false;
+                            for (var i in tile) {
+                                U.addClass(tile[i].toString(), 'Locked');
+                            }
+                            clearArray(dice);
+                        }
+                    } else {
+                        U.openModal("Number is Higher then Dice");
+                        tile.pop();
                     }
-                } else {
-                    U.openModal("Number is Higher then Dice");
-                    tile.pop();
-                    avg -= this.value;
+                } else if ((this.classList.contains('flipped')) && (!this.classList.contains('Locked'))) {
+                    U.removeClass(this.id, 'flipped');
+                    removeItem(tile, this.id);
                 }
-
                 console.log('Tile ' + tile);
                 console.log('Avg ' + avg);
                 console.log('Score ' + startScore);
+            } else {
+                U.openModal("Roll Dice");
             }
         }
+
     }
 
 
     // Roll Dice
     function rollDice() {
-        clearArray(dice);
         clearArray(tile);
 
         var dice1 = document.getElementById('dice1');
@@ -67,15 +71,25 @@
 
     // Clear Array
     function clearArray(arr) {
+        //arr.length = 0;
         while (arr.length) {
             arr.pop();
         }
-        //arr.length = 0;
     }
 
     // Add Array
     function addArray(a, b) {
         return a + b;
+    }
+
+    // Remove Item From Array
+    function removeItem(arr, item) {
+        for (var i in arr) {
+            if (arr[i] == item) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
     }
 
     // End Turn

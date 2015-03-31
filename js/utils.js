@@ -1,4 +1,4 @@
-// JS Utility Library
+// Utility Library
 
 var U = {
 
