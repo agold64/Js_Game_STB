@@ -3,6 +3,7 @@
     // Arrays
     var dice = [];
     var tile = [];
+    var totalTile = [];
 
     // Score
     var startScore = '45';
@@ -37,9 +38,6 @@
                     U.removeClass(this.id, 'flipped');
                     removeItem(tile, this.id);
                 }
-                console.log('Tile ' + tile);
-                console.log('Avg ' + avg);
-                console.log('Score ' + startScore);
             } else {
                 U.openModal("Roll Dice");
             }
