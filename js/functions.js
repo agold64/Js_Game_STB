@@ -1,9 +1,8 @@
 ﻿(function () {
+    'use strict';
 
     // Arrays
-    var dice = [];
-    var tile = [];
-    var totalTile = [];
+    var dice = [], tile = [], totalTile = [];
 
     // Score
     var startScore = '45';
@@ -12,6 +11,7 @@
     // Flip Tile
     for (var i = 1; i < 10; i++) {
         var element = document.getElementById([i]);
+        totalTile[i] = i;
 
         element.onclick = function () {
             if (dice.length !== 0) {
@@ -28,7 +28,15 @@
                             for (var i in tile) {
                                 U.addClass(tile[i].toString(), 'Locked');
                             }
+
                             clearArray(dice);
+
+                            for (var i = 0; i < totalTile.length; i++) {
+                                if (tile.indexOf(totalTile[i]) !== -1) {
+                                    console.log('match ' + i);
+                                    totalTile.splice(i, 1);
+                                }
+                            }
                         }
                     } else {
                         U.openModal("Number is Higher then Dice");
@@ -41,10 +49,10 @@
             } else {
                 U.openModal("Roll Dice");
             }
+            console.log(totalTile);
+            console.log(tile);
         }
-
     }
-
 
     // Roll Dice
     function rollDice() {

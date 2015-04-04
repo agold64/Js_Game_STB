@@ -8,6 +8,7 @@ body {
 
 h1 { font-size: 26px; }
 h2 { font-size: 16px; }
+h3 { font-size: 14px; color: #cb8c3a; padding-bottom: 5px; }
 
 a { text-decoration: none; }
 
@@ -179,6 +180,9 @@ ul.numbers {
    text-decoration: none;
    vertical-align: middle;  
 }
+    .controlContainer button:focus {
+        outline: none;
+    }
     .controlContainer button:hover {
        border-top-color: #28597a;
        background: #28597a;

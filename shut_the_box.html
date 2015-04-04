@@ -80,17 +80,7 @@
          <div class="controlContainer">
              <div class="rules">
                  <h2>Game Rules</h2>
-                 <p>After rolling, add up the dice and then flip one of any combination of open numbers that equals the total number on the dice.</p> 
-                 <p>For example, if the total number is 8, the player may choose any of the following sets of numbers (as long as all of the numbers in 
-                    the set are available to be covered):</p>
-                 <ul>
-                     <li>8</li>
-                     <li>7, 1</li>
-                     <li>6, 2</li>
-                     <li>5, 3</li>
-                     <li>5, 2, 1</li>
-                     <li>4, 3, 1</li>
-                 </ul>
+                 <button id="rules">Instructions</button>
              </div>
              <div class="diceButton">
                  <button id="rollDice">Roll Dice</button>
@@ -109,10 +99,14 @@
     <!-- Modal Window -->
     <div id="modal">
         <div class="modalMask"></div>
-        <div class="modalContent"><p id="modalText"><!-- Message --></p> <button type="button" id="closeModal">Close</button></div>
+        <div class="modalContent">
+            <div id="modalText"><!-- Message --></div> 
+            <button type="button" id="closeModal">Close</button>
+        </div>
     </div>
-
+  
     <script src="js/utils.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/instructions.js"></script>
 </body>
 </html>

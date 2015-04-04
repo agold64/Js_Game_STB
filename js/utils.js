@@ -1,4 +1,3 @@
-// Utility Library
 
 var U = {
 
@@ -54,13 +53,14 @@ var U = {
 
     openModal: function(message) {
         'use strict';
-        this.$('modalText').textContent = message;
+        this.$('modalText').innerHTML = message;
         this.$('modal').style.display = 'inline-block';
     },
 
     closeModal: function() {
         'use strict';
         document.getElementById('modal').style.display = 'none';
+        document.getElementById('modalText').textContent = null;
     }
 
 };
