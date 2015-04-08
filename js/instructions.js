@@ -34,10 +34,8 @@
         ajax.send(null);
     }
 
-    window.onload = function () {
-        'use strict';
-        U.addEvent(document.getElementById('rules'), 'click', instructions);
-        U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
-    }
+
+    U.addEvent(document.getElementById('rules'), 'click', instructions);
+    U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
 
 })();

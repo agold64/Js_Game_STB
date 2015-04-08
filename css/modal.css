@@ -31,6 +31,8 @@
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         border-radius: 3px;
+        -moz-box-shadow: 1px 1px 3px 1px #888888;
+        -webkit-box-shadow: 1px 1px 3px 1px #888888;
         box-shadow: 1px 1px 3px 1px #888888;
         z-index: 9999;
         font-family: Verdana;
@@ -56,7 +58,7 @@
 
         
 /********** Button **********/
-button {
+.modalButton {
     padding: 3px 7px;
     background: #3fcaed;
     color: #ffffff;
@@ -65,17 +67,17 @@ button {
     -webkit-border-radius: 2px;
     border-radius: 2px;
 }
-    button:hover {
+    .modalButton:hover {
         background: #ffffff;
         color: #3fcaed;
         cursor: pointer;
     }
-    button#okButton,
-    button#closeModal {
+    #okButton,
+    #closeModal {
         background: #ffffff;
         color: #3fcaed;        
     }
-        button#okButton:hover,
+        #okButton:hover,
         #closeModal:hover {
             background: #3fcaed;
             color: #ffffff;            

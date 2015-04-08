@@ -33,10 +33,11 @@
 
                             for (var i = 0; i < totalTile.length; i++) {
                                 if (tile.indexOf(totalTile[i]) !== -1) {
-                                    console.log('match ' + i);
                                     totalTile.splice(i, 1);
                                 }
                             }
+                            console.log('Match ' + i);
+                            console.log(totalTile);
                         }
                     } else {
                         U.openModal("Number is Higher then Dice");
@@ -49,7 +50,6 @@
             } else {
                 U.openModal("Roll Dice");
             }
-            console.log(totalTile);
             console.log(tile);
         }
     }
@@ -113,11 +113,9 @@
     }
 
     // EventHandlers
-    window.onload = function () {
-        U.addEvent(document.getElementById('rollDice'), 'click', rollDice);
-        U.addEvent(document.getElementById('endGame'), 'click', resetGame);
-        U.addEvent(document.getElementById('endTurn'), 'click', endTurn);
-        U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
-    }
+    U.addEvent(document.getElementById('rollDice'), 'click', rollDice);
+    U.addEvent(document.getElementById('endGame'), 'click', resetGame);
+    U.addEvent(document.getElementById('endTurn'), 'click', endTurn);
+    U.addEvent(document.getElementById('closeModal'), 'click', U.closeModal);
 
 }());
