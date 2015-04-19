@@ -109,7 +109,7 @@ ul.numbers {
     .card .back {  
         background-image: url(../img/wood.png);
         border: 1px solid #fff;
-        color: #000;
+        color: #eda933;
         -webkit-transform: rotateX(-180deg);
         -moz-transform: rotateX(-180deg);
         -ms-transform: rotateX(-180deg);
@@ -174,9 +174,7 @@ ul.numbers {
 
 .scoreBoard {
     color: #eda933;
-    position: absolute;
     text-align: center;
-    top: 130px;
 }
     .scoreBoard h2 {
         margin-bottom: 3px;
@@ -192,16 +190,19 @@ ul.numbers {
     }
 
 .diceButton {
-    position: absolute;
-    top: 200px;
+    margin-top: 10px;
 }
+
 .controlButton {
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
+    left: 13%;
 }
-    .controlButton button:first-of-type {
-        margin-bottom: 10px;
-    }
+
+.rules button {
+    display: block;
+    margin-bottom: 5px;
+}
 
 /******** Button Styles ********/
 .rollButton {
@@ -286,7 +287,8 @@ ul.numbers {
 }
 
 
-.endGameButton {
+.endGameButton,
+.endTurnButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #9acc85;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #9acc85;
 	box-shadow:inset 0px 1px 0px 0px #9acc85;
@@ -310,7 +312,8 @@ ul.numbers {
 	padding:6px 24px;
 	text-decoration:none;
 }
-.endGameButton:hover {
+.endGameButton:hover,
+.endTurnButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #68a54b), color-stop(1, #74ad5a));
 	background:-moz-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
 	background:-webkit-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
@@ -320,7 +323,8 @@ ul.numbers {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#68a54b', endColorstr='#74ad5a',GradientType=0);
 	background-color:#68a54b;
 }
-.endGameButton:active {
+.endGameButton:active,
+.endTurnButton:active {
 	position:relative;
 	top:1px;
 }
